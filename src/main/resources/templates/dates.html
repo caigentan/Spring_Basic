@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>#dates</h1>
+    <th:block th:with="now=${#dates.createNow()}">
+        <span th:utext="${now}"></span>
+        <h4>#dates.format(now, 'yyyy-MM-dd HH:mm:ss')</h4>
+        <span th:utext="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"></span>
+        <h4>#data.year(now)</h4>
+        <span th:utext="${#dates.year(now)}"></span>
+        <h4>#data.month(now)</h4>
+        <span th:utext="${#dates.month(now)}"></span>
+        <h4>#data.day(now)</h4>
+        <span th:utext="${#dates.day(now)}"></span>
+        <h4>#data.dayOfWeekName(now)</h4>
+        <span th:utext="${#dates.dayOfWeekName(now)}"></span>
+        <h4>#data.hour(now)</h4>
+        <span th:utext="${#dates.hour(now)}"></span>
+        <h4>#data.minute(now)</h4>
+        <span th:utext="${#dates.minute(now)}"></span>
+        <h4>#data.second(now)</h4>
+        <span th:utext="${#dates.second(now)}"></span>
+        <h4>#data.millisecond(now)</h4>
+        <span th:utext="${#dates.millisecond(now)}"></span>
+    </th:block>
+</body>
+</html>

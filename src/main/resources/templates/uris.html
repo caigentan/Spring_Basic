@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>#uris</h1>
+    <h2>#uris.escapePath('https://www.caigentan.com?username=caigentan&age=1&gender=Male')</h2>
+    <span th:utext="${#uris.escapePath('https://www.caigentan.com?username=caigentan&age=1&gender=Male')}"></span>
+
+    <h2>#uris.unescapePath('https://www.caigentan.com%3Fusername=caigentan&age=1&gender=Male')</h2>
+    <span th:utext="${#uris.unescapePath('https://www.caigentan.com%3Fusername=caigentan&age=1&gender=Male')}"></span>
+
+</body>
+</html>

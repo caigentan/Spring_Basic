@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <div>
+            <p th:utext="${#ctx.#locale.country}"></p>
+            <h1>#locale</h1>
+            <p th:utext="${#locale.CHINA}"></p>
+            <p th:utext="${#locale.country}"></p>
+            <p th:utext="${#locale.language}"></p>
+            <p th:utext="${#locale.default}"></p>
+        </div>
+        <tr><td>#request</td></tr>
+        <tr>
+            <td>#request.contextPath</td>
+            <td th:utext="${#request.contextPath}"></td>
+        </tr>
+        <tr>
+            <td>#request.requestURL</td>
+            <td th:utext="${#request.requestURL}"></td>
+        </tr>
+        <tr>
+            <td>#request.requestURI</td>
+            <td th:utext="${#request.requestURI}"></td>
+        </tr>
+        <tr>
+            <td>#request.headerNames</td>
+            <td th:utext="${#request.headerNames}"></td>
+        </tr>
+    </table>
+    <ul>
+        <h3>#request.headerNames</h3>
+        <th:block th:each="headerName:${#request.headerNames}">
+            <li th:utext="${headerName}"></li>
+        </th:block>
+    </ul>
+    <ul>
+        <h3>#rsponse.headerNames</h3>
+        <th:block th:each="headerName:${#response.headerNames}">
+            <li th:utext="${headerName}"></li>
+        </th:block>
+    </ul>
+    <table border="1">
+        <tr th:each="attrName:${#servletContext.attributeNames}">
+            <td th:utext="${attrName}"></td>
+            <td th:utext="${#servletContext.getAttribute(attrName)}"></td>
+        </tr>
+    </table>
+    <h2>#session</h2>
+    <table border="1">
+        <tr th:each="sess:${#session.getAttributeNames()}">
+            <td th:utext="${sess}"></td>
+            <td th:utext="${#session.getAttribute(sess)}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>#objects</h1>
+    <h4>#objects.arrayNullSafe(countries,'Canda')</h4>
+    <ul>
+        <li th:each="country:${#objects.arrayNullSafe(countries, 'Canda')}"
+            th:utext="${country}">
+        </li>
+    </ul>
+</body>
+</html>

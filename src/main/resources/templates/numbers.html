@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>#numbers 123456.789</h1>
+    <th:block th:with="number=123456.789">
+        <h4>#numbers.formatInteger(number,3)}</h4>
+        <span th:utext="${#numbers.formatInteger(number,3)}"></span>
+        <h4>${#numbers.formatInteger(num,3,'POINT')}</h4>
+        <span th:utext="${#numbers.formatInteger(number,3,'POINT')}">Number</span>
+         <h4>${#numbers.formatDecimal(num,3,'POINT',2,'COMMA')}</h4>
+        <span th:utext="${#numbers.formatDecimal(number,3,'POINT',2,'COMMA')}">Number</span>
+
+    </th:block>
+</body>
+</html>

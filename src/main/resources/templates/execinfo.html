@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>#execinfo</h1>
+    <h2>#execinfo.templateMode</h2>
+    <span th:utext="${#execInfo.templateMode}"></span>
+    <h2>#execinfo.templateNmae</h2>
+    <span th:utext="${#execInfo.templateName}"></span>
+    <h2>#execinfo.now</h2>
+    <span th:utext="${#execInfo.now}"></span>
+</body>
+</html>
